@@ -34,3 +34,7 @@ cityForm.addEventListener('submit', function(event) {
     const ciudadSeleccionada = selectCity.value;
     window.location.href = `clima.html?city=${encodeURIComponent(ciudadSeleccionada)}`
 })
+
+// 4. Cargar las opciones de ciudades al cargar la página principal
+
+document.addEventListener('DOMContentLoaded', cargarOpcionesCiudades)
