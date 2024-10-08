@@ -30,3 +30,11 @@ function obtenerInfoClima(ciudad) {
         alert(`No se encontró información para ${ciudad}.`)
     }
 }
+
+// 4. Función para mostrar dinámicamente el clima de la ciudad seleccionada en la tabla
+function mostrarClimaEnTabla(ciudad) {
+    const row = weatherTable.insertRow()
+    row.insertCell(0).textContent = ciudad.nombre
+    row.insertCell(1).textContent = ciudad.temperatura
+    row.insertCell(2).textContent = ciudad.condicion
+}
