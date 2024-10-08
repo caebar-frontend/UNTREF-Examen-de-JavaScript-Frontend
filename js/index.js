@@ -25,3 +25,12 @@ function cargarOpcionesCiudades() {
             alert('No se pudieron cargar las ciudades. Intenta de nuevo más tarde.')
         })
 }
+
+// 3. Manejar evento de envío del formulario para redirigir a clima.html con la ciudad seleccionada
+cityForm.addEventListener('submit', function(event) {
+    // Prevenir el envío del formulario para manejarlo con JavaScript
+    event.preventDefault()
+    // Redirigir a clima.html con la ciudad seleccionada como parámetro GET
+    const ciudadSeleccionada = selectCity.value;
+    window.location.href = `clima.html?city=${encodeURIComponent(ciudadSeleccionada)}`
+})
