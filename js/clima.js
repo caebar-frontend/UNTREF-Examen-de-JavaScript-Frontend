@@ -52,3 +52,19 @@ function agregarCiudadAHistorial(ciudad) {
         actualizarHistorialEnDOM()
     }
 }
+
+// 6. Función para actualizar el historial en el DOM desde localStorage
+function actualizarHistorialEnDOM() {
+    // Limpiar el historial actual
+    historyList.innerHTML = ''
+
+    // Obtener el array de historial desde el LocalStorage
+    const historial = JSON.parse(localStorage.getItem('historial')) || []
+
+    // Recorrer el historial y cargar en el dom
+    historial.forEach(ciudad => {
+        const li = document.createElement('li')
+        li.textContent = ciudad;
+        historyList.appendChild(li)
+    })
+}
