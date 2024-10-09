@@ -68,3 +68,11 @@ function actualizarHistorialEnDOM() {
         historyList.appendChild(li)
     })
 }
+
+// 7. Función para vaciar el historial de consultas en localStorage y en el DOM
+function vaciarHistorial() {
+    // Vaciar historial en localStorage
+    localStorage.removeItem('historial')
+    // Vaciar la lista de historial en el DOM
+    actualizarHistorialEnDOM()
+}
