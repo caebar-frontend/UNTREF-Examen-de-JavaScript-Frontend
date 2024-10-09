@@ -76,3 +76,16 @@ function vaciarHistorial() {
     // Vaciar la lista de historial en el DOM
     actualizarHistorialEnDOM()
 }
+
+// 8. Obtener la ciudad seleccionada desde los parámetros GET y obtener su información de clima al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    // obtener parámetros GET de la URL (ciudad seleccionada)
+    const ciudadSeleccionada = obtenerParametroGET('city')
+    // obtener información de clima de una ciudad desde localStorage
+    if (ciudadSeleccionada) {
+        obtenerInfoClima(ciudadSeleccionada)
+    }
+    // actualizar el historial en el DOM desde localStorage
+    actualizarHistorialEnDOM()
+
+})
