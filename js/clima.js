@@ -38,3 +38,17 @@ function mostrarClimaEnTabla(ciudad) {
     row.insertCell(1).textContent = ciudad.temperatura
     row.insertCell(2).textContent = ciudad.condicion
 }
+
+// 5. Función para agregar una ciudad al historial en localStorage
+function agregarCiudadAHistorial(ciudad) {
+    // Evitar duplicados en el historial
+    let historial = JSON.parse(localStorage.getItem('historial')) || []
+   
+    
+    // Actualizar la lista en el DOM
+    if (!historial.includes(ciudad)) {
+        historial.push(ciudad);
+        localStorage.setItem('historial', JSON.stringify(historial))
+        actualizarHistorialEnDOM()
+    }
+}
