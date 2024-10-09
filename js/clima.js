@@ -89,3 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     actualizarHistorialEnDOM()
 
 })
+
+// 9. Manejar evento de clic en el botón de vaciar historial para eliminar todas las consultas anteriores
+
+clearHistoryBtn.addEventListener('click', vaciarHistorial)
